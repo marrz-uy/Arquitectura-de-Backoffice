@@ -7,7 +7,7 @@ services:
     volumes:
       - "./backoffice-front:/usr/local/apache2/htdocs/"
   backend:
-    image: ggmartinez/laravel:9-php8-Xdebug
+    image: ggmartinez/laravel:8
     ports:
       - "8000:8000"
     volumes:
