@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  frontend:
+    container_name: backoffice-frontend
+    image: marrzuy/backoffice-frontend:latest
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - "./backoffice-front:/usr/local/apache2/htdocs/"
+
+  backend:
+    container_name: backoffice-backend
+    tty: true
+    restart: unless-stopped
+    image: marrzuy/backoffice-backend:latest
+    volumes:
+      # - ./backoffice-backend:/backoffice-backend
+      - ./ENV:/var/www/html/.env
+    ports:
+      - "9000:80"
