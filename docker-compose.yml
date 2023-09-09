@@ -15,5 +15,8 @@ services:
     image: marrzuy/backoffice-backend:latest
     volumes:
       - ./ENV:/var/www/html/.env
+      - ./script.sh:/var/www/html/script.sh
+      - ./optimize.sh:/var/www/html/optimize.sh
+#    command: bash "script.sh && httpd -D FOREGROUND"
     ports:
       - "9000:80"
